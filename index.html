@@ -1,60 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Образование за рубежом</title>
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
             min-height: 100vh;
-            background: linear-gradient(to bottom, #EFF6FF, #FFFFFF);
+            background: white;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1024px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            padding: 2rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding: 4rem 0;
-            }
+            padding: 64px 16px 32px;
         }
 
         .hero {
             text-align: center;
-            padding-top: 3rem;
-            padding-bottom: 2rem;
+            margin-bottom: 64px;
         }
 
         .hero h1 {
-            font-size: 2rem;
+            font-size: 2.25rem;
+            color: #111827;
             margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
-
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
         }
 
         .hero p {
-            font-size: 1.125rem;
-            color: #666;
+            font-size: 1.25rem;
+            color: #4B5563;
             margin-bottom: 2rem;
         }
 
@@ -62,272 +47,139 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            justify-content: center;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .button-group {
-                flex-direction: row;
-            }
-        }
-
-        .button {
-            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
+        }
+
+        .primary-button {
+            background: #2563EB;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            border: none;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
+            transition: background 0.3s;
         }
 
-        .button-primary {
-            background-color: #2563EB;
-            color: white;
-            border: none;
+        .primary-button:hover {
+            background: #1D4ED8;
         }
 
-        .button-primary:hover {
-            background-color: #1D4ED8;
-        }
-
-        .button-outline {
-            background-color: transparent;
-            border: 1px solid #2563EB;
-            color: #2563EB;
-        }
-
-        .button-outline:hover {
-            background-color: #EFF6FF;
-        }
-
-        .card {
+        .secondary-button {
+            padding: 12px 32px;
+            border-radius: 8px;
+            border: 1px solid #D1D5DB;
             background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            margin: 0 auto;
-            max-width: 42rem;
-        }
-
-        .carousel {
-            position: relative;
-            margin-bottom: 1rem;
-        }
-
-        .carousel-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .carousel-button {
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 1px solid #2563EB;
-            border-radius: 0.375rem;
-            background: transparent;
+            color: #374151;
+            font-weight: 500;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2563EB;
+            transition: background 0.3s;
         }
 
-        .carousel-button:hover {
-            background-color: #EFF6FF;
+        .secondary-button:hover {
+            background: #F3F4F6;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 1.875rem;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
+            font-family: 'Impact', sans-serif;
+            font-size: 1.5rem;
+            color: #111827;
+            margin-bottom: 1.5rem;
         }
 
-        .resources-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+        .materials {
+            margin-bottom: 64px;
         }
 
-        .resources-list a {
-            color: #2563EB;
-            text-decoration: underline;
-            padding: 0.5rem;
-        }
-
-        .resources-list a:hover {
-            color: #1D4ED8;
-        }
-
-        .highlight {
-            color: #2563EB;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .testimonial-text {
+        .material-link {
+            display: block;
+            padding: 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            color: #111827;
+            text-decoration: none;
             margin-bottom: 1rem;
+            transition: background 0.3s;
         }
 
-        .testimonial-author {
-            font-weight: 600;
+        .material-link:hover {
+            background: #F3F4F6;
         }
 
-        .white-section {
-            background-color: white;
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
-        .gray-section {
-            background-color: #F9FAFB;
+        .achievement-card {
+            padding: 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+        }
+
+        .achievement-card h3 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+
+        .achievement-card p {
+            color: #4B5563;
+        }
+
+        @media (min-width: 768px) {
+            .button-group {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="hero section">
-        <div class="container">
-            <h1>Ваш путь к успешному образованию за рубежом</h1>
-            <p>Профессиональная помощь в подготовке документов для поступления в зарубежные вузы</p>
+    <main class="container">
+        <div class="hero">
+            <h1>Master Your Path to Graduate Studies Abroad</h1>
+            <p>Expert guidance for your academic journey from someone who's been on both sides of the admission process</p>
             <div class="button-group">
-                <button class="button button-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    Услуги
-                </button>
-                <button class="button button-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    Задать вопрос
-                </button>
+                <button class="primary-button">Help me with motivational letter (3000 RUB)</button>
+                <button class="secondary-button">Ask a question</button>
             </div>
         </div>
-    </div>
 
-    <div class="white-section section">
-        <div class="container">
-            <h2 class="section-title">Мои услуги</h2>
-            <div class="carousel" id="services-carousel">
-                <div class="card">
-                    <h3 class="service-type">консультация</h3>
-                    <p class="service-title">Мотивационное письмо — срочно</p>
-                </div>
-                <div class="carousel-buttons">
-                    <button class="carousel-button" onclick="prevSlide('services')">←</button>
-                    <button class="carousel-button" onclick="nextSlide('services')">→</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section class="materials">
+            <h2 class="section-title">My Free Materials</h2>
+            <a href="#" class="material-link">How to Write a Winning Motivation Letter</a>
+            <a href="#" class="material-link">Scholarship Application Guide</a>
+            <a href="#" class="material-link">Top Universities Selection Criteria</a>
+        </section>
 
-    <div class="gray-section section">
-        <div class="container">
-            <h2 class="section-title">Мои бесплатные материалы</h2>
-            <div class="resources-list">
-                <a href="#">Ссылка раз</a>
-                <a href="#">Ссылка два</a>
-                <a href="#">Ссылка три</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="white-section section">
-        <div class="container">
-            <h2 class="section-title">Почему я</h2>
-            <div class="carousel" id="achievements-carousel">
-                <div class="card">
-                    <h3 class="highlight">10+ клиентов</h3>
-                    <p>поступило в зарубежные вузы</p>
+        <section>
+            <h2 class="section-title">Why Me</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3>10+ clients</h3>
+                    <p>get accepted to master studies abroad</p>
                 </div>
-                <div class="carousel-buttons">
-                    <button class="carousel-button" onclick="prevSlide('achievements')">←</button>
-                    <button class="carousel-button" onclick="nextSlide('achievements')">→</button>
+                <div class="achievement-card">
+                    <h3>3 years</h3>
+                    <p>I spent evaluating master studies applications</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Visby Scholarship</h3>
+                    <p>I won to study at Uppsala University (Sweden)</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>I got selected</h3>
+                    <p>on full-time paid PhD position at TU Delft (the Netherlands)</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="gray-section section">
-        <div class="container">
-            <h2 class="section-title">Отзывы</h2>
-            <div class="carousel" id="testimonials-carousel">
-                <div class="card">
-                    <p class="testimonial-text">Прекрасный консультант! Помог мне...</p>
-                    <p class="testimonial-author">— Арина</p>
-                </div>
-                <div class="carousel-buttons">
-                    <button class="carousel-button" onclick="prevSlide('testimonials')">←</button>
-                    <button class="carousel-button" onclick="nextSlide('testimonials')">→</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const carouselData = {
-            services: [
-                { type: 'консультация', title: 'Мотивационное письмо — срочно' },
-                { type: 'консультация', title: 'Мотивационое письмо' }
-            ],
-            achievements: [
-                { highlight: '10+ клиентов', description: 'поступило в зарубежные вузы' },
-                { highlight: '300+ заявок', description: 'отобрано за 3 года работы в приемной комиссии' },
-                { highlight: 'Я выиграл', description: 'стипендию Visby Scholarship в магистратуру Uppsala University (Швеция)' },
-                { highlight: 'Я прошел отбор', description: 'на спонсируемую PhD-позицию в TU Delft (Нидерланды)' }
-            ],
-            testimonials: [
-                { text: 'Прекрасный консультант! Помог мне...', author: 'Арина' },
-                { text: 'Очень довольна результатом...', author: 'Аня' },
-                { text: 'Рекомендую!', author: 'Катя' }
-            ]
-        };
-
-        const currentSlide = {
-            services: 0,
-            achievements: 0,
-            testimonials: 0
-        };
-
-        function updateCarousel(type) {
-            const carousel = document.getElementById(`${type}-carousel`);
-            const card = carousel.querySelector('.card');
-            const data = carouselData[type][currentSlide[type]];
-
-            if (type === 'services') {
-                card.innerHTML = `
-                    <h3 class="service-type">${data.type}</h3>
-                    <p class="service-title">${data.title}</p>
-                `;
-            } else if (type === 'achievements') {
-                card.innerHTML = `
-                    <h3 class="highlight">${data.highlight}</h3>
-                    <p>${data.description}</p>
-                `;
-            } else if (type === 'testimonials') {
-                card.innerHTML = `
-                    <p class="testimonial-text">${data.text}</p>
-                    <p class="testimonial-author">— ${data.author}</p>
-                `;
-            }
-        }
-
-        function nextSlide(type) {
-            currentSlide[type] = (currentSlide[type] + 1) % carouselData[type].length;
-            updateCarousel(type);
-        }
-
-        function prevSlide(type) {
-            currentSlide[type] = (currentSlide[type] - 1 + carouselData[type].length) % carouselData[type].length;
-            updateCarousel(type);
-        }
-
-        // Initialize all carousels
-        updateCarousel('services');
-        updateCarousel('achievements');
-        updateCarousel('testimonials');
-    </script>
+        </section>
+    </main>
 </body>
 </html>
